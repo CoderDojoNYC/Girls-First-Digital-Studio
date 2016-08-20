@@ -1,1 +1,535 @@
-Hello World Kruti! 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Girls-first-digital-studio by CoderDojoNYC</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Girls-first-digital-studio</h1>
+        <h2>Girls First Digital Studio curriculum</h2>
+        <a href="https://github.com/CoderDojoNYC/Girls-First-Digital-Studio" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="girls-first-digital-studio" class="anchor" href="#girls-first-digital-studio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Girls First Digital Studio</h1>
+
+<h2>
+<a id="variable---a-storage-of-a-value-number-words-etc" class="anchor" href="#variable---a-storage-of-a-value-number-words-etc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variable - A storage of a value (number, words, etc)</h2>
+
+<ul>
+<li>Think of a variable like an envelope it holds anything you put inside of it.</li>
+</ul>
+
+<h2>
+<a id="types-of-variables---what-specific-type-of-values-the-variable-can-store" class="anchor" href="#types-of-variables---what-specific-type-of-values-the-variable-can-store" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Types of Variables - What specific type of values the variable can store.</h2>
+
+<ul>
+<li>Int - Stores integers (whole number negative and positive).
+
+<ul>
+<li>public int year = 365;</li>
+</ul>
+</li>
+<li> Boolean - Stores true or false values.
+
+<ul>
+<li>public bool hired = true;</li>
+</ul>
+</li>
+<li> Float - Stores decimal numbers.
+
+<ul>
+<li>public float speed = .5f;</li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="microsoft-workshop" class="anchor" href="#microsoft-workshop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MICROSOFT WORKSHOP</h1>
+
+
+<h2>
+<a id="week-1-may-21---may-22" class="anchor" href="#week-1-may-21---may-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 1: May 21 - May 22</h2>
+
+<ul>
+<li>Parents and Youth Orientation </li>
+<li> Check-ins and Ice breakers </li>
+<li> Introduction to Game Development and Unity </li>
+<li>Editor tour
+
+<ul>
+<li>Basic navigation (e.g. Scene, Game, Directional Light, Console, Project, Asset Store, Inspector),</li>
+<li>Game objects/Components (e.g. RigidBody, Collider, Transform, Mesh Renderer)</li>
+<li>Building simple game from 3D primitives</li>
+</ul>
+</li>
+<li>Created objects Cube, players</li>
+<li>Created a C# Script (CubeMove) for moving the cube in four directions</li>
+<li> Created Microsoft OneDrive Accounts to save projects</li>
+</ul>
+
+<h1>
+<a id="cubemove-script" class="anchor" href="#cubemove-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CubeMove Script:</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class CubeMove : MonoBehaviour {
+    public float speed = .5f;
+
+    // Use this for initialization
+    void Start () { 
+    }
+    //Update is called once per frame
+    void Update () {
+
+        if(Input.GetKey(KeyCode.W)){
+                transform.position += new Vector3 (0, 0, speed);
+          }
+          if(Input.GetKey(KeyCode.S)){
+                transform.position += new Vector3 (0, 0, -speed);
+          }
+          if(Input.GetKey(KeyCode.A)){
+                transform.position += new Vector3 (-speed, 0, 0);
+          }
+          if(Input.GetKey(KeyCode.D)){
+                transform.position += new Vector3 (speed, 0, 0);
+          }
+    }
+}
+</code></pre>
+
+<h2>
+<a id="week-2-may-28---may-29" class="anchor" href="#week-2-may-28---may-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 2: May 28 - May 29</h2>
+
+<ul>
+<li>Introductions to Standard assets (e.g. Materials, Scripts)</li>
+<li>Basic scripting
+
+<ul>
+<li>Collision detection for picking up objects</li>
+<li>Created a game manager</li>
+<li> Free building and game designing</li>
+</ul>
+</li>
+<li>
+<p>Created new cubes (naming them Danger Zones, Enemies)</p>
+
+<ul>
+<li>Stretched them into rectangles (Transform Components)</li>
+<li>Added color to objects</li>
+<li>Adding various components to the objects like Rigidbody, Colliders, and collision 
+<img src="https://cloud.githubusercontent.com/assets/16143142/17632036/6b770298-6094-11e6-8868-421974a87226.png" alt="screen shot 2016-08-06 at 2 43 17 pm">
+</li>
+</ul>
+</li>
+<li><p>Introduction to Blender</p></li>
+<li>Created C# Scripts 
+
+<ul>
+<li>Enemy-collects objects when the player collides with object
+*Danger Zone- the player dies when it triggers the danger zone (Red Area)</li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="enemy-script" class="anchor" href="#enemy-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enemy Script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class Enemy : MonoBehaviour {
+
+      // Use this for initialization
+      void Start () {
+
+      }
+
+      // Update is called once per frame
+      void Update () {
+        }
+
+      void OnTriggerEnter(Collider obj){
+            CubeMove.lives -= 1;
+            Destroy (obj.gameObject);
+            Application.LoadLevel(0);
+        }
+}
+</code></pre>
+
+<h1>
+<a id="dangerzone-script" class="anchor" href="#dangerzone-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DangerZone Script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class DangerZone : MonoBehaviour {
+
+    // Use this for initialization
+    void Start () {
+    }
+
+    // Update is called once per frame
+    void Update () {
+    }
+
+    void OnTriggerEnter(Collider obj){
+        if (obj.tag == "player") {
+           Destroy (obj.gameObject);
+        }
+    }
+}
+</code></pre>
+
+
+<h2>
+<a id="week-3-june-4--june-5" class="anchor" href="#week-3-june-4--june-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 3: June 4- June 5</h2>
+
+<ul>
+<li>Introduction to the Blender and the Terrain tool</li>
+<li>Used various images from Google Images for game design</li>
+<li>Created objects (ship, Iceberg terrain) and installed them into Unity</li>
+<li>Created landscape and added CubeMove script to ship</li>
+<li><strong><a href="https://twitter.com/albertolacon/status/739535527339163648">https://twitter.com/albertolacon/status/739535527339163648</a></strong></li>
+</ul>
+
+
+<h1>
+<a id="think-rise-new-york-workshop" class="anchor" href="#think-rise-new-york-workshop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>THINK RISE NEW YORK WORKSHOP</h1>
+
+
+<h2>
+<a id="week-1-june-11" class="anchor" href="#week-1-june-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 1: June 11</h2>
+
+<ul>
+<li>Introduction</li>
+<li>Check-ins </li>
+<li>Ice breakers</li>
+<li>Introduction to Unity and Blender </li>
+<li>Presentations of few games by the instructor</li>
+<li>Creating account for Unity </li>
+</ul>
+
+<h2>
+<a id="week-2-june-18" class="anchor" href="#week-2-june-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 2: June 18</h2>
+
+<ul>
+<li>Check-ins</li>
+<li>Downloading Unity and Blender</li>
+<li>Start to work on first project in unity</li>
+<li>Create two objects( Enemy, Player)
+
+<ul>
+<li>Adding Rigidbody 2D (Physics to the object)</li>
+<li>Adding box Collider 2D (Physics to the object)</li>
+</ul>
+</li>
+<li>Create C# scripts
+
+<ul>
+<li>CubeMove--moves the object player in four directions upon pressing down certain keys</li>
+<li>Enemy (which was DangerZone in the Microsoft Workshop)</li>
+<li>WinZone (which was Enemy in the Microsoft Workshop)<br>
+</li>
+</ul>
+</li>
+</ul>
+
+<h1>
+<a id="cubemove-c-script" class="anchor" href="#cubemove-c-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CubeMove C# Script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class CubeMove : MonoBehaviour {
+      public float speed = .5f;
+    // Use this for initialization
+      void Start () {
+      }
+
+      // Update is called once per frame
+      void Update () {
+
+            if(Input.GetKey(KeyCode.W)){
+                  transform.position += new Vector3 (0, 0, speed);
+            }
+            if(Input.GetKey(KeyCode.S)){
+                  transform.position += new Vector3 (0, 0, -speed);
+            }
+            if(Input.GetKey(KeyCode.A)){
+                  transform.position += new Vector3 (-speed, 0, 0);
+            }
+            if(Input.GetKey(KeyCode.D)){
+                  transform.position += new Vector3 (speed, 0, 0);
+              }
+        }
+}
+</code></pre>
+
+<h1>
+<a id="enemy-c-script" class="anchor" href="#enemy-c-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enemy C# script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class Enemy : MonoBehaviour {
+    public Text text;
+      // Use this for initialization
+      void Start () {
+      }
+
+      // Update is called once per frame
+      void Update () {
+            if (CubeMove.lives == 0) {
+                  text.enabled = true;
+            }
+      }
+      void OnTriggerEnter(Collider obj){
+            CubeMove.lives -= 1;
+            Destroy (obj.gameObject);
+            Application.LoadLevel(0);
+        }
+}
+</code></pre>
+
+<h1>
+<a id="winzone-c-script" class="anchor" href="#winzone-c-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WinZone C# script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class WinZone : MonoBehaviour {
+
+    // Use this for initialization
+      void Start () {
+      }
+
+      // Update is called once per frame
+      void Update () {
+      }
+
+      void OnTriggerEnter(Collider obj){
+            Destroy (obj.gameObject);
+        }
+}
+</code></pre>
+
+<h2>
+<a id="week-3-june-25" class="anchor" href="#week-3-june-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 3: June 25</h2>
+
+<ul>
+<li>Review from last week</li>
+<li>Update CubeMove and Enemy scripts by adding variables speed and lives</li>
+<li>Application.LoadLevel--reloading the game/level</li>
+<li>Learning to use Build Settings</li>
+<li>Learning to use Unity API</li>
+<li>Tagging the cube--“player”</li>
+<li>Adding Canvas and text to game</li>
+<li>Adding color to object/Creating Materials/Assets folder</li>
+</ul>
+
+<h1>
+<a id="updated-cubemove-script" class="anchor" href="#updated-cubemove-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Updated CubeMove Script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class CubeMove : MonoBehaviour {
+      public float speed = .5f;
+      public static int lives=3;
+      // Use this for initialization
+      void Start () {
+    }
+
+      // Update is called once per frame
+      void Update () {
+
+            if(Input.GetKey(KeyCode.W)){
+                  transform.position += new Vector3 (0, 0, speed);
+            }
+            if(Input.GetKey(KeyCode.S)){
+                  transform.position += new Vector3 (0, 0, -speed);
+            }
+            if(Input.GetKey(KeyCode.A)){
+                  transform.position += new Vector3 (-speed, 0, 0);
+            }
+            if(Input.GetKey(KeyCode.D)){
+                  transform.position += new Vector3 (speed, 0, 0);
+              }
+        }
+}
+</code></pre>
+
+<p>(Using the variable Speed it’s able to change the speed of the controls. Lives is also created to keep track of how many lives are in the game at that moment.)</p>
+
+<h1>
+<a id="lives-script-for-enemy-script" class="anchor" href="#lives-script-for-enemy-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lives Script for Enemy Script</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class CubeMove : MonoBehavior {
+      public float speed = .5f;
+      public static int lives=3;
+    // Use this for initialization 
+      void Start (){
+      }
+</code></pre>
+
+<p>(The 5th line tells it to subtract one from the variable lives when the player collides with the enemy)</p>
+
+<pre><code>    void Update () {
+      }
+    void OnTriggerEnter(Collider obj){
+        Destroy (obj.gameObject);
+        Application.LoadLevel("Game");
+      }
+}
+</code></pre>
+
+<p>(This belongs on the Enemy script and makes it reset the level when you touch (collide) the player object with the enemy object.)</p>
+
+<h1>
+<a id="week-4-july-2" class="anchor" href="#week-4-july-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 4: July 2</h1>
+
+<ul>
+<li>Reviewing CubeMove, Enemy, and WinZone scripts</li>
+<li>Making the text “Game Over!” appear when the lives count reached 0.</li>
+<li>Adding images to objects</li>
+<li>Creating a pick-up system (using the Enemy script) with coins and other collectables</li>
+<li>Understanding how to read the Console and fix errors in code</li>
+</ul>
+
+<h1>
+<a id="week-5-july-16" class="anchor" href="#week-5-july-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 5: July 16</h1>
+
+<ul>
+<li>Rotating the object 45 degrees when it touched the wall</li>
+<li>Using Blender 3D Model Repository to upload 3D Models into Unity</li>
+<li>Parenting the 3D Model to the AI cube into order to place the 3D model on top of the cube</li>
+<li>Using Mesh Renderer to make the cube invisible and make only the 3D model visible</li>
+<li>Creating background using Google Images (e.g. sand and water)</li>
+<li>Creating an object that chases the original object</li>
+</ul>
+
+<h1>
+<a id="aicontroller-script" class="anchor" href="#aicontroller-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AIController Script:</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class AIController : MonoBehaviour {
+      public float speed = 2.0f;
+        // Use this for initialization
+        void Start () {
+        }
+        // Update is called once per frame
+        void Update () {
+             transform.Translate (Vector3.forward * Time.deltaTime * speed);
+      }
+}
+</code></pre>
+
+<h1>
+<a id="wallcontroller-script" class="anchor" href="#wallcontroller-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WallController Script:</h1>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class WallController : MonoBehaviour {
+      // Use this for initialization
+      void Start () {
+      }
+      // Update is called once per frame
+      void Update () {
+      }
+      void OnTriggerEnter(Collider obj) {
+            if (obj.tag == "AI") {
+                  transform.Rotate (new Vector3 (0, 180, 0));
+                  transform.Rotate (new Vector3 (0, 45, 0));
+            }
+    }
+}
+</code></pre>
+
+<h1>
+<a id="week-6-july-23" class="anchor" href="#week-6-july-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 6: July 23</h1>
+
+<ul>
+<li>Based on a set of rules: the students completed a game that was required to have:
+
+<ul>
+<li>An AI controller object that moved on its own</li>
+<li>CubeMove, Enemy, WinZone Scripts</li>
+<li>A rotation once the object touched the wall</li>
+<li>An object that chased the other object</li>
+<li>A 3D model parented to the AI Controller</li>
+<li>An object that the player can control (with the keys--W, A, S, D)</li>
+<li>Preface to publishing game on Itch.io</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<h1>
+<a id="more-information-about-c-language" class="anchor" href="#more-information-about-c-language" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More Information about C# language:</h1>
+
+<h1>
+<a id="commentaries-on-scripts" class="anchor" href="#commentaries-on-scripts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commentaries on Scripts:</h1>
+
+<h1>
+<a id="enemy" class="anchor" href="#enemy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Enemy</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/16143142/17632118/c2c784dc-6094-11e6-8330-621e1488e901.png" alt="screen shot 2016-08-06 at 3 43 00 pm"></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/16143142/17632200/1aaf7074-6095-11e6-8b2a-8c8c7be7b6ae.png" alt="screen shot 2016-08-06 at 3 42 39 pm"></p>
+
+<h1>
+<a id="cubemove" class="anchor" href="#cubemove" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CubeMove</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/17395593/17632393/155b4020-6096-11e6-934d-1e29764e3336.png" alt="screenshot 78"></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/CoderDojoNYC/Girls-First-Digital-Studio/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/CoderDojoNYC/Girls-First-Digital-Studio/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/CoderDojoNYC/Girls-First-Digital-Studio"></a> is maintained by <a href="https://github.com/CoderDojoNYC">CoderDojoNYC</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
