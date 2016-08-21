@@ -419,12 +419,104 @@ public class WallController : MonoBehaviour {
 
 # Enemy
 
-![screen shot 2016-08-06 at 3 43 00 pm](https://cloud.githubusercontent.com/assets/16143142/17632118/c2c784dc-6094-11e6-8330-621e1488e901.png)
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+// Make sure to add the above line into your script. This allows you to use the user interface codes like ‘Text’
+public class Enemy : MonoBehaviour {
+		// this is the property that saves the Text Object as a variable that you can manipulate 
+	public Text text;
+		// Use this for initialization
+	public Text livesText;
+		// this is the second object that only handles numbers (the number of lives the player has )
+	void Start () {
+	
+	}
+	// Update is called once per frame
+	void Update () {
+	// this is an if statement that checks if the live variable in another script (which is a static variable ) is less than or equal to zero
+  	// if so it makes the first text object visible 
+	if (NameOfScript.lives == 0) {
+			text.enabled = true;
+		}
+	}
+	// this is constantly setting the second tect object to whatever the current number is for the lives variable inside the other script
+	LivesText.text = “ “ + (NameOfScript.lives);
+	}
+}
 
-![screen shot 2016-08-06 at 3 42 39 pm](https://cloud.githubusercontent.com/assets/16143142/17632200/1aaf7074-6095-11e6-8b2a-8c8c7be7b6ae.png)
+```
 
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+// Make sure to add the above line into your script. This allows you to use the user interface codes like ‘Text’
+public class Enemy : MonoBehaviour {
+		// this is the property that saves the Text Object as a variable that you can manipulate 
+	public Text text;
+		// Use this for initialization
+	public Text livesText;
+		// this is the second object that only handles numbers (the number of lives the player has )
+	void Start () {
+	}
+//replace [PLAYERCONTROLLERSCRIPT]  with whatever script controls your character 
+	// Update is called once per frame
+	void Update () {
+	// Makes the text box displaying GameOver visible when the player looses enough lives 
+		if ([PLAYERCONTROLLERSCRIPT].lives == 0) {
+			text.enabled = true;
+		}
+		//displays  the current life count to the console
+		Debug.Log ([PLAYERCONTROLLERSCRIPT].lives);
+		//sets the text box displaying the life count to whatever the life count is according to the script 
+	 LivesText.text= “ “ +(CubeMove.lives);
+}
+         void OnTriggerEnter(Collider obj){
+	//removes a life if a player has come in contact with this object
+	// obj is a reverence variable to whatever object comes in contact with this object … in the case it is the player 
+	// this will also rest the level once triggered
+		If (obj.tag == “Player” ) {
+		[PLAYERSCRIPTLIVES] .lives -= 1;
+		Destroy (obj.gameObject);
+		Application.LoadLevel(0);
+	}
+}
+
+```
 
 # CubeMove
 
-![screenshot 78](https://cloud.githubusercontent.com/assets/17395593/17632393/155b4020-6096-11e6-934d-1e29764e3336.png)
+```
+using UnityEngine;
+using System.Collections;
+
+public class CubeMove : MonoBehaviour {
+	// CubeMove-This class name must be the same as the file name for the entire script.
+	public float speed = .5f;
+	public static int lives=3;
+	// 0.5f is for the speed of the player (cube) and int lives is for the account of the number of lives.
+	// Use this for initialization
+	void Start () {
+	
+	// Update is called once per frame
+	void Update () {
+
+		if(Input.GetKey(KeyCode.W)){
+			transform.position += new Vector3 (0, 0, speed);
+		}
+		if(Input.GetKey(KeyCode.S)){
+			transform.position += new Vector3 (0, 0, -speed);
+		}
+		if(Input.GetKey(KeyCode.A)){
+			transform.position += new Vector3 (-speed, 0, 0);
+		}
+		if(Input.GetKey(KeyCode.D)){
+			transform.position += new Vector3 (speed, 0, 0);
+		}
+	}
+}
+
+```
 
