@@ -68,6 +68,7 @@ public class CubeMove : MonoBehaviour {
   - Adding various components to the objects-- Rigidbody, Colliders  
 - Introduction to Standard assets (e.g. Materials)
   - We learn to add color and paste pictures onto objects by creating a folder, “Materials” in our Assets folder
+
 ## Introduction to New Objects and Scripts
 - Creating C# Scripts (“Danger Zone”, “Enemy”) and attaching them to the new cubes we had created
 - “Enemy”- a pickup system. Collects objects when the player collides with object
