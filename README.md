@@ -121,7 +121,7 @@ public class DangerZone : MonoBehaviour {
 }
 ```
 
-# Adding Lives and Reloading Level
+## Adding Lives and Reloading Level
 - Updating CubeMove by adding variables speed and lives. 
 	* Setting the “speed” to a certain constant allows us to control how fast the cube will move when we activate the right keys (recall: CubeMove script).
 	* We want our game to have a certain lives count so that the game is over when that lives count reaches 0. Otherwise, the game would never end.
@@ -157,7 +157,7 @@ void Update () {
 - Adding a Canvas and text to the game (such as “Lives: ” and “Game Over!”
 	* Using Mesh Renderer and adding code to Enemy script to enable “Game Over!” to only appear after the lives count reaches 0.
 
-# Updated CubeMove Script
+##  Updated CubeMove Script
 ```
 using UnityEngine;
 using System.Collections;
@@ -189,7 +189,7 @@ public class CubeMove : MonoBehaviour {
 ```
 (Using the variable Speed it’s able to change the speed of the controls. Lives is also created to keep track of how many lives are in the game at that moment.)
 
-# Updated Enemy Script
+## Updated Enemy Script
 ```
 using UnityEngine;
 using System.Collections;
@@ -215,7 +215,7 @@ public class Enemy : MonoBehaviour {
 }
 ```
 
-# Game #2: Introduction to Blender and Blender 3D Repository
+## Game #2: Introduction to Blender and Blender 3D Repository
 - Introduction to Blender, an open-sourced program that allows users to create their own objects
 	* Using Blender to create our own ship designs and installing them into Unity
 	* Adding CubeMove Script to ship
@@ -225,7 +225,7 @@ public class Enemy : MonoBehaviour {
 - Here is a model game that shows what we learned:
 https://twitter.com/albertolacon/status/739535527339163648
 
-# A New Game: Using AI Technology
+##  A New Game: Using AI Technology
 - Writing code (“AI Controller”) for an object (a cube) to be able to move forward by itself (without the help of a pressed down key)
 	* Rotating the object 45 degrees when it touched the wall (using creating a Wall Controller code)
 - Fixing a 3D image of an animal onto our self-moving object (because cubes don’t move on their own) so that it appears that the only thing moving is the animal
@@ -235,7 +235,7 @@ https://twitter.com/albertolacon/status/739535527339163648
 - Creating background using Google Images (e.g. sand and water)
 - Creating an object that chases the original object (by writing an AI2 Controller Script)
 
-# AIController Script
+## AIController Script
 ```
 using UnityEngine;
 using System.Collections;
@@ -252,7 +252,7 @@ public class AIController : MonoBehaviour {
 }
 ```
 
-# AI2Controller Script
+## AI2Controller Script
 ```
 using UnityEngine;
 using System.Collections;
@@ -284,7 +284,7 @@ public class AI2Controller : MonoBehaviour {
 }
 ```
 
-# WallController Script
+## WallController Script
 ```
 using UnityEngine;
 using System.Collections;
