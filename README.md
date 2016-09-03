@@ -6,17 +6,18 @@ Unity 3D is a free program that allows users to create any 2D or 3D interactive 
 ## What is Blender?
 Blender is a free and open sourced 3D modeling software that enables its users to create objects and designs of their own. In GFDS, we create ships using Blender and install them into Unity for our games.
 
-## Introduction to C#
+## Introduction to C# 
 ### Variables
 - Def: A storage of a value (number, words, etc)
-- Think of a variable like an envelope it holds anything you put inside of it.
-#### Types of Variables
-- Int - Stores integers (whole number negative and positive).
-    * public int year = 365;
--  Boolean - Stores true or false values.
-    * public bool hired = true;
--  Float - Stores decimal numbers.
-    * public float speed = .5f;
+- Think of a variable like an envelope it holds anything you put inside of it
+
+### Types of Variables 
+- Int - Stores integers (whole number negative and positive)
+	* public int year = 365;
+-  Boolean - Stores true or false values
+	* public bool hired = true;
+-  Float - Stores decimal numbers
+	* public float speed = .5f;
 
 ## Game #1: Introduction to Game Development and Unity
 - Downloading Unity and Blender
@@ -30,7 +31,7 @@ Blender is a free and open sourced 3D modeling software that enables its users t
 - Learning to write a C# Script (CubeMove) for moving the cube in four directions by pressing down certain keys
 - Creating and using Microsoft OneDrive Accounts to save projects
 
-# CubeMove Script:
+## CubeMove Script:
 ```
 using UnityEngine;
 using System.Collections;
@@ -132,55 +133,6 @@ public class DangerZone : MonoBehaviour {
 - Tagging the cube--“player” so that we can refer to the gameObject that we want (by calling its name)
 - Understanding how to read the Console and fix errors in code
 
-
-
-# AIController Script:
-```
-using UnityEngine;
-using System.Collections;
-
-public class AIController : MonoBehaviour {
-	  public float speed = 2.0f;
-		// Use this for initialization
-		void Start () {
-		}
-		// Update is called once per frame
-		void Update () {
-		     transform.Translate (Vector3.forward * Time.deltaTime * speed);
-	  }
-}
-```	
-# WallController Script:
-
-```
-using UnityEngine;
-using System.Collections;
-
-public class WallController : MonoBehaviour {
-	  // Use this for initialization
-	  void Start () {
-	  }
-	  // Update is called once per frame
-	  void Update () {
-	  }
-	  void OnTriggerEnter(Collider obj) {
-		    if (obj.tag == "AI") {
-			      transform.Rotate (new Vector3 (0, 180, 0));
-			      transform.Rotate (new Vector3 (0, 45, 0));
-		    }
-    }
-}
-```
-
-# Week 6: July 23 
-- Based on a set of rules: the students completed a game that was required to have:
-      * An AI controller object that moved on its own
-      * CubeMove, Enemy, WinZone Scripts
-      * A rotation once the object touched the wall
-      * An object that chased the other object
-      * A 3D model parented to the AI Controller
-      * An object that the player can control (with the keys--W, A, S, D)
-      * Preface to publishing game on Itch.io
 
 ---------------------------------------------------------------------
 
