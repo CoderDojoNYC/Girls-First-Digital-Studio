@@ -148,11 +148,10 @@ public class CubeMove : MonoBehavior {
 ```
 void Update () {
       }
-    void OnTriggerEnter(Collider obj){
-        Destroy (obj.gameObject);
+void OnTriggerEnter(Collider obj){
+	Destroy (obj.gameObject);
         Application.LoadLevel("Game");
       }
-}
 ```
 (This belongs on the Enemy script and makes it reset the level when you touch (collide) the player object with the enemy object.)
 
